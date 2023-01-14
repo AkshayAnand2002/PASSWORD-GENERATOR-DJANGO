@@ -1,0 +1,32 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<div class="container text-center"> <!--THIS LINE IS TO BRING THE WHOLE CODE BLOCK INTO CENTER OF WEBPAGE.-->
+<h1>PASSWORD GENERATOR</h1>.
+{{ password }}
+<form action="{% url 'password' %}"> 
+    <!--we gave url name here i.e. 3rd parameter in path of urls.py
+        instead directly we can give name generatepassword also.-->
+    <select name="length">
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+        <option value="11">11</option>
+        <option value="12" selected="selected">12</option>
+        <option value="13">13</option>
+        <option value="14">14</option>
+    </select>(LENGTH OF PASSWORD)
+    <br>
+    <input type="checkbox" name="uppercase">UPPERCASE
+    <br>
+    <input type="checkbox" name="numbers">NUMBERS
+    <br>
+    <input type="checkbox" name="special">SPECIAL CHARACTERS
+    <br>
+    <input type="submit" value="Generate Password" class="btn btn-primary">
+</form>
+<br>
+<br>
+<br>
+<a href="{% url 'about' %}"class="btn btn-success">ABOUT PAGE</a>
+</div>
